@@ -1,0 +1,13 @@
+<% if @weather %>
+  <h2>Weather Forecast for <%= params[:address] %></h2>
+  <p><strong>Temperature:</strong> <%= @weather[:temperature] %></p>
+  <p><strong>High:</strong> <%= @weather[:high] %></p>
+  <p><strong>Low:</strong> <%= @weather[:low] %></p>
+  <p><strong>Description:</strong> <%= @weather[:description] %></p>
+
+  <% if @cached %>
+    <p><em>Note: Data retrieved from cache</em></p>
+  <% end %>
+<% elsif @weather.nil? %>
+  <p style="color: red;">Error: Unable to retrieve weather data for the provided address.</p>
+<% end %>

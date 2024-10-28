@@ -1,0 +1,7 @@
+<%= form_with url: weathers_path do |f| %>
+  <div>
+    <%= f.label :address, 'Address'%>
+    <%= f.text_field :address, required: true %>
+  </div>
+  <%= f.submit 'Get Weather' %>
+<% end %>
